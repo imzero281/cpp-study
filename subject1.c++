@@ -65,3 +65,58 @@ int main(void) {
 
 	return 0;
 }
+
+/*
+1) 크기가 10인 정수배열을 선언하고 키보드로 배열원소 저장
+2) 배열의 원소를 함수를 사용해서 출력 
+3) 배열의 원소의 합을 함수를 사용해서 출력
+4) 배열 원소중 짝수만 덧셈하는 프로그램 작성
+*/
+
+#include <iostream>
+using namespace std;
+
+void prAr(int a[10], int n) {
+	cout << "함수 사용해서 배열의 원소 출력하기" << endl;
+	for (int i = 0;i < n;i++) {
+		cout << a[i]<<"	";
+	}
+	cout << endl;
+}
+
+
+void sumAr(int a[10], int n) {
+	cout << "함수 사용해서 배열 원소의 합 출력하기" << endl;
+	int sum = 0;
+	for (int i = 0;i < n;i++) {
+		sum += a[i];
+	}
+	cout << sum << endl;
+}
+
+void holsumAr(int a[10], int n) {
+	cout << "함수 사용해서 배열의 홀수 원소 합 출력하기" << endl;
+	int holsum = 0;
+	for (int i = 0;i < n;i++) {
+		if (a[i] % 2 == 1) {
+			holsum += a[i];
+		}
+	}
+	cout << holsum << endl;
+}
+
+int main(void) {
+
+	cout << "크기가 10인 배열 원소(10개)를 입력하세요: ";
+	int ar[10];
+
+    for (int i = 0; i < 10; i++) {
+        cin >> ar[i];
+    }
+
+	prAr(ar, 10);
+	sumAr(ar, 10);
+	holsumAr(ar, 10);
+
+	return 0;
+}
