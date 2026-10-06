@@ -49,6 +49,98 @@ int main(void) {
 
 	printf("a의 주소 = %d\n", &a);
 	printf("a의 주소 = %p\n", &a);
+
+	int* ap = &a;
+	cout << "ap = " << ap << endl;
+	cout << "*ap = " << *ap << endl;
+	*ap = 70;
+	cout << "ap = " << ap << endl;
+	cout << "*ap = " << *ap << endl;
+	cout << "a = " << a << endl;
+
+//===== 배열과 포인터	======
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void prEx(int* ap) {
+	*ap = 100;
+}
+
+void swap(int* a, int* b) {
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void pr(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		cout << *(a + i) << "	";
+	}
+	cout << endl;
+}
+
+//배열 매개변수로 배열 원소 출력
+void prAr(int* b, int n) {
+	for (int i = 0; i < n; i++) {
+		cout << *(b + i) << "	";
+	}
+	cout << endl;
+}
+
+//배열의 원소 +2를 하는 함수 
+void prS(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		a[i] += 2;
+	}
+	cout<<endl;
+}
+
+int main(void) {
+	
+	int a = 10;
+	cout << "a = " << a << endl;
+	prEx(&a);
+	cout << "a = " << a << endl;
+
+	int x = 10;
+	int y = 20;
+	cout << "교환 전 " << x << " " << y << endl;
+	swap(&x, &y);
+	cout << "교환 후 " << x << " " << y << endl;
+
+	//=====배열과 포인터=====
+	cout << "\n배열과 포인터" << endl;
+	int ar[] = { 1,2,3 };
+	printf("%d\n", ar);
+	printf("%d\n", ar+1);
+	printf("%d\n", ar+3);
+
+	printf("%d\n", &ar[0]);
+	printf("%d\n", &ar[1]);
+	printf("%d\n", &ar[2]);
+	
+	cout << ar[0] << endl;
+	cout << *ar << endl;
+
+	cout << ar[1] << endl;
+	cout << *(ar+1) << endl;
+
+	cout << ar[2] << endl;
+	cout << *(ar+2) << endl;
+	
+	pr(ar, 3);
+
+	int arr[] = { 4,5,6 };
+	prAr(arr, 3);
+
+	prS(ar, 3);
+	
+	return 0;
+}
+
+
 	return 0;
 }
 
