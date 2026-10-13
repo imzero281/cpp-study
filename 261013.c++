@@ -83,3 +83,116 @@ int main(void) {
 	return 0;
 }
 
+//얘도 미완료
+Student {
+public:
+    int n;
+    string name;
+    int c_sc;
+    int java_sc;
+    int sum;
+    double ave;
+    int rank; 
+
+    void getSum() {
+        sum = c_sc + java_sc;
+    }
+
+    void getAve() {
+        ave = (double)sum / 2;
+    }
+
+    void getRank() {
+
+    }
+    void prt() {
+        cout << n << "\t" << name << "\t" << c_sc << "\t" << java_sc << "\t" << sum << "\t" << ave << "\t" << rank << endl;
+    }
+
+    //연산과 출력을 한번에 ok
+
+};
+
+int main(void) {
+   
+    cout << "번호\t이름\tcs\tjs\t합\t평균\t등수\n";
+
+    Student ob1;
+    ob1.n = 1;
+    ob1.name = "홍길동";
+    ob1.c_sc = 100;
+    ob1.java_sc = 100;
+    ob1.rank = 1;
+    ob1.getSum();
+    ob1.getAve();
+    ob1.prt();
+
+    Student ob2;
+    ob2.n = 2;
+    ob2.name = "김길동";
+    ob2.c_sc = 100;
+    ob2.java_sc = 70;
+    ob2.rank = 2;
+    ob2.getSum();
+    ob2.getAve();
+    ob2.prt();
+
+    Student ob3;
+    ob3.n = 3;
+    ob3.name = "박길동";
+    ob3.c_sc = 20;
+    ob3.java_sc = 50;
+    ob3.rank = 3;
+    ob3.getSum();
+    ob3.getAve();
+    ob3.prt();
+
+    return 0;
+}
+
+//생성자
+
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+	int x;
+	A() {
+		x = 100;
+		cout << "기본 생성자 실행됨" << endl;
+	}
+	A(int a) {
+		x = a;
+		cout << "매개변수 있는 생성자 실행됨" << endl;
+	}
+};
+
+int main(void) {
+	A ob;
+	cout << ob.x << endl;
+	A ob1;
+	cout << ob1.x << endl;
+	A ob2(10);
+	cout << ob2.x << endl;
+
+	return 0;
+}
+
+class A {
+public:
+	int x;
+	A() {} // 생성자를 구현하려면 빈 기본 생성자라도 넣어야 안전
+	A(int a) {
+		x = a;
+		cout << "매개변수 있는 생성자 실행됨" << endl;
+	}
+};
+
+int main(void) {
+	A ob;
+	A ob2(10);
+	cout << ob2.x << endl;
+
+	return 0;
+}
