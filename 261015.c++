@@ -27,11 +27,18 @@ public:
 	int sum;
 	double ave;
 	
-	A():A(0,0){}
+	/* A():A(0,0){}
 	A(int x, int y) {
 		a = x;
 		b = y;
 		cout << "x = " << x << ", y= " << y << endl; // 이 상황엔 맞지 않아요.... 어떻게 맞게 해야할까요.... 수정한 건 맞을까요....
+	}*/
+
+	A():A(0,0,0){}
+	A(int num, int x, int y){
+		n=num;
+		a=x;
+		b=y;
 	}
 
 	void getPrt() {
@@ -49,7 +56,10 @@ int main(void) {
 	cout << a << " 와 " << b << "의 평균 " << ave << endl;
 
 	cout << "번호\ta\tb\t" << "sum\t" << "ave" << endl;
-	A ob1;
+	A ob1(1, 3, 5); //훨씬 간편하게 사용 가능
+	ob1.getPrt();
+	
+	/*A ob1;
 	ob1.n = 1;
 	ob1.a = 5;
 	ob1.b = 10;
@@ -66,6 +76,7 @@ int main(void) {
 	ob3.a = 7;
 	ob3.b = 1;
 	ob3.getPrt();
+	*/
 
 	return 0;
 }
