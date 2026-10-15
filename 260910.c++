@@ -3,80 +3,60 @@ using namespace std;
 
 int main(void) {
 
+	//나머지 연산이 짝수인지 홀수인지 출력
 	int num;
 
 	cout << "정수를 입력하시오: ";
 	cin >> num;
 
 	if (num % 2 == 0) {
-		cout << "입력된 정수 " << num << "은 짝수입니다." << endl << endl;
+		cout << "입력된 정수 " << num << "은(는) 짝수입니다." << endl << endl;
 	}
 	else {
-		cout<< "입력된 정수 " << num << "은 홀수입니다." << endl<<endl;
+		cout << "입력된 정수 " << num << "은(는) 홀수입니다." << endl << endl;
 	}
 
-
-	int a;
-
-	cout << "정수를 입력하시오: ";
-	cin >> a;
-
-	if (a % 2 == 0) {
-		cout << "입력된 정수 " << a << "는 짝수입니다." << endl << endl;
-	}
-	else {
-		cout << "입력된 정수 " << a << "는 홀수입니다." << endl << endl;
-	}
-
-	cout << "정수를 입력하시오: ";
-	cin >> a;
-
-	if (a % 2 == 0) {
-		cout << "정수 " << a << "=" << "짝수" << endl << endl;
-	}
-	else {
-		cout << "정수 " << a << "=" << "홀수" << endl << endl;
-	}
-
-
+	//두 정수 입력받고 합, 곱 나머지가 짝수 홀수인지 출력
 	cout << "첫 번째 정수를 입력하시오: ";
 	int x, y, sum;
 	cin >> x;
-	cout<< "두 번째 정수를 입력하시오: ";
+	cout << "두 번째 정수를 입력하시오: ";
 	cin >> y;
 	cout << endl;
 
 	sum = x + y;
 	if (sum % 2 == 0) {
-		cout << "두 정수 " << x <<","<< y << "의 합 " << sum << "은 짝수입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 합 " << sum << "은 짝수입니다." << endl << endl;
 	}
 	else {
-		cout << "두 정수 " << x << "," << y << "의 합 " << sum << "은 홀수입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 합 " << sum << "은 홀수입니다." << endl << endl;
 	}
 
 	int mul;
 	mul = x * y;
 	if (mul % 2 == 0) {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << "은 짝수입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << "은 짝수입니다." << endl << endl;
 	}
 	else {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << "은 홀수입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << "은 홀수입니다." << endl << endl;
 	}
 
+	//나머지가 곱보다 큰지 작은지 출력
 	int rem;
 	rem = x % y;
-	if (rem>mul) {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << "보다 " << x << "," << y << "의 나머지 " << rem << "이(가) 더 큽니다." << endl << endl;
+	if (rem > mul) {
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << "보다 " << x << "," << y << "의 나머지 " << rem << "이(가) 더 큽니다." << endl << endl;
 	}
 	else {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << "이(가) " << x << "," << y << "의 나머지 " <<rem<< "보다 더 큽니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << "이(가) " << x << "," << y << "의 나머지 " << rem << "보다 더 큽니다." << endl << endl;
 	}
 
+	//두 정수의 합과 곱 중 큰 수 출력
 	if (mul > sum) {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << " 과(와) " << "합 " << sum << " 중 큰 수는 " << mul << "입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << " 과(와) " << "합 " << sum << " 중 큰 수는 " << mul << "입니다." << endl << endl;
 	}
 	else {
-		cout << "두 정수 " << x << "," << y << "의 곱 " << mul << " 과(와) " << "합 " << sum << "  큰 수는 " << sum << "입니다." << endl << endl;
+		cout << "두 정수 " << x << ", " << y << "의 곱 " << mul << " 과(와) " << "합 " << sum << "  큰 수는 " << sum << "입니다." << endl << endl;
 	}
 
 	return 0;
