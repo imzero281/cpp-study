@@ -2,6 +2,11 @@
 using namespace std;
 
 // 함수
+int sum(int x, int y) {
+	int hap;
+	hap = x + y;
+	return hap;
+}
 
 int sum(int a, int b) {
     int hap = a + b;
@@ -30,6 +35,12 @@ int rem(int a, int b) {
 
 int main() {
 
+    cout << "4와 5의 합 = " << sum(4, 5) << endl;
+	cout << "542와 5의 합 = " << sum(542, 5) << endl;
+	cout << "784와 45의 합 = " << sum(784, 45) << endl;
+	cout << "124와 95의 합 = " << sum(124, 95) << endl;
+
+    //2번째 시간부터 나간 진도
     cout << sum(10, 20) << endl;
 
     int x = 20;
