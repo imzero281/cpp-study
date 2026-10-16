@@ -19,24 +19,27 @@ int getMax(int x, int y) {
 
 // 두 수의 평균을 리턴하는 함수 
 double getAve(int x, int y) {
-	double avg = (double) (x+y) / 2;
+	double avg = (double)(x + y) / 2;
 	return avg;
 }
 
 // 세 정수 중 가장 큰 수 리턴하는 함수 
+// 세 정수 중 가장 큰 수 리턴하는 함수
 int getTmax(int x, int y, int z) {
+	int max;
+
 	if (x > y) {
-		return x;
-	}
-	else if (y > z) {
-		return y;
-	}
-	else if (x>z) {
-		return x;
+		max = x;
 	}
 	else {
-		return z;
+		max = y;
 	}
+
+	if (max < z) {
+		max = z;
+	}
+
+	return max;
 }
 
 // 두 정수 중 작은 수 리턴하는 함수 
@@ -86,7 +89,7 @@ void getMaxAr(int a[], int n) {
 	int max = a[0];
 	for (int i = 0; i < n; i++) {
 		if (a[i] > max) {
-			max= a[i];
+			max = a[i];
 		}
 	}
 	cout << max;
@@ -126,7 +129,7 @@ int main() {
 
 	//배열 원소 출력
 	cout << endl << "배열의 원소 출력" << endl;
-	int ar[] = { 7,2,9,45,1};
+	int ar[] = { 7,2,9,45,1 };
 	for (int i = 0; i < 5; i++) {
 		cout << ar[i] << " ";
 	}
@@ -138,11 +141,11 @@ int main() {
 		sum += ar[i];
 	}
 	cout << sum << endl;
-	
+
 	// 배열 함수 호출해서 출력
 	prAr(ar, 5);
 	cout << endl << endl;
-	
+
 	// 배열의 합 함수 호출해서 출력
 	hapAr(ar, 5);
 	cout << endl << endl;
