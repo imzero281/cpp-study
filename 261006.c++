@@ -43,12 +43,13 @@ int main(void) {
 
 	// ===== 포인터 ======
 	cout << endl;
-	a = 50;
+	
+	int a = 50; //앞에것 #include 있다고 생각
 	cout << "a = " << a << endl;
-	cout << "a의 주소 " << &a << endl;
+	cout << "a의 주소 " << &a << endl;//기본 16진수 출력
 
-	printf("a의 주소 = %d\n", &a);
-	printf("a의 주소 = %p\n", &a);
+	printf("a의 주소 = %d\n", &a); //10진수로 출력
+	printf("a의 주소 = %p\n", &a); //16진수로 출력
 
 	int* ap = &a;
 	cout << "ap = " << ap << endl;
@@ -57,6 +58,9 @@ int main(void) {
 	cout << "ap = " << ap << endl;
 	cout << "*ap = " << *ap << endl;
 	cout << "a = " << a << endl;
+
+	return 0;
+}
 
 //===== 배열과 포인터	======
 #include <iostream>
@@ -94,11 +98,11 @@ void prS(int* a, int n) {
 	for (int i = 0; i < n; i++) {
 		a[i] += 2;
 	}
-	cout<<endl;
+	cout << endl;
 }
 
 int main(void) {
-	
+
 	int a = 10;
 	cout << "a = " << a << endl;
 	prEx(&a);
@@ -113,33 +117,30 @@ int main(void) {
 	//=====배열과 포인터=====
 	cout << "\n배열과 포인터" << endl;
 	int ar[] = { 1,2,3 };
-	printf("%d\n", ar);
-	printf("%d\n", ar+1);
-	printf("%d\n", ar+3);
+	printf("%d\n", ar); //주소값이 4씩 차이남
+	printf("%d\n", ar + 1);
+	printf("%d\n", ar + 3);
 
-	printf("%d\n", &ar[0]);
+	printf("%d\n", &ar[0]); //주소값이 4씩 차이남
 	printf("%d\n", &ar[1]);
 	printf("%d\n", &ar[2]);
-	
+
+	cout << endl;
 	cout << ar[0] << endl;
 	cout << *ar << endl;
 
 	cout << ar[1] << endl;
-	cout << *(ar+1) << endl;
+	cout << *(ar + 1) << endl;
 
 	cout << ar[2] << endl;
-	cout << *(ar+2) << endl;
-	
+	cout << *(ar + 2) << endl;
+
 	pr(ar, 3);
 
 	int arr[] = { 4,5,6 };
 	prAr(arr, 3);
 
 	prS(ar, 3);
-	
-	return 0;
-}
-
 
 	return 0;
 }
