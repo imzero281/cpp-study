@@ -31,7 +31,7 @@ int main(void) {
 	for (int i = 0; i < 10; i++) {
 		sum += ar[i];
 	}
-	cout << sum;
+	cout << sum <<endl;
 
 	cout << endl << "배열 원소 중 가장 큰 수 출력" << endl;
 	int max = ar[0];
