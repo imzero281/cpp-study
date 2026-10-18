@@ -203,10 +203,32 @@ using namespace std;
 void sumAr(int a[3][5], int b[3][5], int c[3][5]) {
 	cout << "<함수 사용해서 두 2차원 배열의 합 출력하기>" << endl;
 	for (int i = 0;i < 3;i++) {
+		
 		for (int j = 0;j < 5;j++) {
 			c[i][j] = a[i][j] + b[i][j];
-			cout << c[i][j] << "	";
 		}
+		cout << endl;
+	}
+}
+
+void prtAr(int a[3][5], int b[3][5], int c[3][5]) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 5; j++) {
+			cout << a[i][j] << "\t";
+		}
+		
+		cout << "+\t";
+
+		for (int j = 0; j < 5; j++) {
+			cout << b[i][j] << "\t";
+		}
+
+		cout << "=\t";
+
+		for (int j = 0; j < 5; j++) {
+			cout << c[i][j] << "\t";
+		}
+
 		cout << endl;
 	}
 }
@@ -216,12 +238,12 @@ int main(void) {
 	cout << "크기가 3x5인 첫번째 배열 원소를 입력하세요: " << endl;
 	int ar[3][5];
 
-    for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 3; i++) {
 		for (int j = 0;j < 5;j++) {
 			cin >> ar[i][j];
 		}
 		cout << endl;
-    }
+	}
 	cout << endl;
 
 	cout << "크기가 3x5인 두번째 배열 원소를 입력하세요: " << endl;
@@ -238,6 +260,7 @@ int main(void) {
 	int rAr[3][5];
 
 	sumAr(ar, arr, rAr);
+	prtAr(ar, arr, rAr);
 
 	return 0;
 }
