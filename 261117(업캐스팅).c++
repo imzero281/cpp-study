@@ -20,14 +20,14 @@ public:
 
 class Base {
 public:
-	void f() {
+	void f() { //virtual void f() 오버라이딩 (가상함수 재정의)
 		cout << "Base::f() called" << endl;
 	}
 };
 
 class Derived : public Base {
 public:
-	void f() {
+	void f() { //virtual void f() //오버라이딩 (가상함수 재정의)
 		cout << "Derived::f() called" << endl;
 	}
 };
